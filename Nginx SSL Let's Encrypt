@@ -6,6 +6,7 @@ sudo apt update                                     *actualiza
 sudo apt install software-properties-common         *Agrega repositorios
 sudo add-apt-repository ppa:certbot/certbot         *agrega repositorio de Certbot utilitario de python que automatiza renovacion de SSL
 sudo apt update
+sudo apt list --upgradable
 sudo apt install certbot                            *Instala cerbot
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048         *Genera intercambio de claves para fortalecer la seguridad
 
@@ -58,6 +59,16 @@ server {
 sudo ln -s /etc/nginx/sites-available/example.com.conf /etc/nginx/sites-enabled/example.com.conf
 sudo systemctl reload nginx         ****Para que cambios surtan efecto******* y Luego obtengo el certificado**************
 sudo certbot certonly --agree-tos --email admin@example.com --webroot -w /var/lib/letsencrypt/ -d example.com -d www.example.com  
+
+
+*****Certificados tipo wildcard  SSL let's Encryp *** Gratuitos para subdominios  *.odro.pro  ***********
+****Ver link https://www.sysadminsdecuba.com/2018/04/como-obtener-un-wildcard-ssl-de-lets-encrypt/ *********
+********https://medium.com/@saurabh6790/generate-wildcard-ssl-certificate-using-lets-encrypt-certbot-273e432794d7******
+* wget https://dl.eff.org/certbot-auto
+* user@webserver:~$ chmod a+x ./certbot-auto
+* ./certbot-auto certonly --manual --preferred-challenges dns --email lojanet@gmail.com  --server https://acme-v02.api.letsencrypt.org/directory --agree-tos  -d "*.odro.pro"
+*******************
+
 
 ************************ edite el archivo *************
 *************/etc/nginx/sites-available/example.com.conf**********
