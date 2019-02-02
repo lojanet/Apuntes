@@ -12,6 +12,8 @@ website_sale_require_login
 
 saas_client
 access_limit_records_number
+
+*******Base de datos del Cliente********* 
 La cuestión clave de la personalización de la base de datos del cliente es cómo restringir los derechos de administración. Por ejemplo, los usuarios del cliente no deberían poder desinstalar el módulo saas_client , editar los registros ir.confir_parameter, etc. La solución más sencilla es no dar acceso a la administración a los clientes. Para hacer una configuración más flexible, puede instalar los siguientes módulos en las bases de datos de SaaS Client:
 
 ir_rule_protected - hace imposible para un administrador sin superusuario editdelete protected ir.rule
@@ -19,3 +21,9 @@ access_restricted - hace imposible que el administrador establezca (y vea) más 
 hidden_admin - hace que el administrador (usuario y socio) sea invisible
 access_apps - permite tener administradores que no tienen acceso a las aplicaciones
 access_settings_menu - permite mostrar el menú de configuración para usuarios que no son administradores
+******************************************
+Estructura del sistema SaaS:
+SaaS Portal: base de datos principal para servidores de control y clientes, administrar plantillas y planes de clientes.
+Servidores SaaS: bases de datos técnicas para controlar las bases de datos de clientes. SaaS servidor crear, editar, eliminar bases de datos. Cada servidor SaaS puede instalarse en una máquina separada (por ejemplo, VPS)
+Clientes de SaaS: base de datos de clientes que deben utilizar los clientes. Cada cliente SaaS está conectado a un servidor SaaS
+******************************************
