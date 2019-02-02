@@ -1,0 +1,21 @@
+
+******DEPENDENCIaS********
+
+saas_server_backup_rotate_s3
+saas_sysadmin_route53
+saas_server_backup_s3
+
+saas_server_backup_ftp
+
+saas_portal_sale_online
+website_sale_require_login
+
+saas_client
+access_limit_records_number
+La cuestión clave de la personalización de la base de datos del cliente es cómo restringir los derechos de administración. Por ejemplo, los usuarios del cliente no deberían poder desinstalar el módulo saas_client , editar los registros ir.confir_parameter, etc. La solución más sencilla es no dar acceso a la administración a los clientes. Para hacer una configuración más flexible, puede instalar los siguientes módulos en las bases de datos de SaaS Client:
+
+ir_rule_protected - hace imposible para un administrador sin superusuario editdelete protected ir.rule
+access_restricted - hace imposible que el administrador establezca (y vea) más derechos de acceso (grupos) de los que ya tiene. (siga el enlace para más descripción)
+hidden_admin - hace que el administrador (usuario y socio) sea invisible
+access_apps - permite tener administradores que no tienen acceso a las aplicaciones
+access_settings_menu - permite mostrar el menú de configuración para usuarios que no son administradores
