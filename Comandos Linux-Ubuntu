@@ -56,3 +56,8 @@ sudo apt-get install git-core           Instalar GITUHB Si queremos bajar desde 
         cat /etc/group			ver grupos
         finger usuario 			ver info de usuario
 *************
+********* ADMINISTRANDO RECURSOS DE UN SERVIDOR *************************
+htop      se monitorea los recursos del servidor en caliente
+df -h     se ve el espacio del disco usado y libre
+du -sh /home/user/Desktop/: La opción -s nos da el tamaño total de una carpeta especifica (en este caso el tamaño de la carpeta Desktop).
+free -m muestra el uso de la memoria ram
