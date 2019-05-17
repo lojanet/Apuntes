@@ -67,6 +67,23 @@ docker cp {SOURCE_FILE} {DESTINATION_CONTAINER_ID}:/{DESTINATION_PATH} * forma m
 scp FILE_PATH_ON_YOUR_HOST IP_CONTAINER:DESTINATION_PATH   *ejemplo: scp -r directory 172.17.0.2:directory
                                                            * Asegúrese de instalar ssh en su contenedor también.
                                                            * apt-get install openssh-server
+                                                           
+**********CREAR UNA IMAGEN DOCKER DESDE EL INICIO ***EJEMPLO POSTFIX que es sevidor de emails******
+sudo su             *se inicia como root para tener los permisos  de escritura
+docker run -i -t Ibase /bin/bash     *Se crea imagen base "Ibase" y se ingresa al shell
+apt-get update               * Se actualiza el sistema base
+apt-get install -y postfix   * Se instala la aplicación que se requiere "POSTFIX" se sigue los pasos ejem. selecciono Internet, y dominio
+exit                         *Saldo del contenedor
+docker ps -a                 *listo los contenedores que se ejecutaron para obtener el ID (primera columna) del que recien cree.
+docker commit 3fcr9990345  lojanet/postfix     *Guardar contenedor con ID:3fcr9990345 en nueva imagen (lojanet:cuenta de docker, postfix:nombre imagen) 
+docker run -i -t lojanet/postfix /bin/bash     *Ingresamos dentro de la imagen para verificar que esta corriendo
+postfix start                *Iniciamos el servicio o verificamos que este corriendo y luego salimos con exit
+docker push lojanet/postfix   *Para grabar y publicar en la cuenta de docker para poder hacer publico y reutilizar la imagen
+*****************************************************************************************************
+
+
+
+
 
 
 
