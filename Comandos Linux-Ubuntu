@@ -12,6 +12,10 @@ sudo -s                 * cambia el usuario a Root
 ********TRABAJANDO CON PUERTOS********************
 netstat -anp --udp --tcp | grep LISTEN  *lista puertos abiertos filtrado por los que estan a la Escucha
 fuser -k 8069/tcp                       *cierra puerto 8069
+fuser -n tcp 3000                       *Identifica con un Nro(3000/tcp: 7425) el proceso que esta usando el puerto 3000
+ps x | grep 7425                        * vemos la app que esta usando el puerto  3000 (ej. 7425 pts/3 Tl 1:15 /home/../bin/ruby script/rails s
+kill -9 7425                          * Para liberar el puerto matamos el proceso 7425
+
 
 ********TRABAJANDO CON DISCO DURO ****************
 fdisk - l         * Para ver informacion de los volumenes de la maquina 9discos duros presentes)
