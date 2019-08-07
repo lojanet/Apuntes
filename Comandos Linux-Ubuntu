@@ -65,3 +65,8 @@ htop      se monitorea los recursos del servidor en caliente
 df -h     se ve el espacio del disco usado y libre
 du -sh /home/user/Desktop/: La opción -s nos da el tamaño total de una carpeta especifica (en este caso el tamaño de la carpeta Desktop).
 free -m muestra el uso de la memoria ram
+scp archivo.txt usuario@dominio.com:/home/usuario                *copiar Archivo pc local a servidor 
+scp usuario@dominio.com:/home/usuario/archivo.txt Documentos     *copiar Archivo del servidor a pc local 
+scp usuario1@dominio1.com:/home/usuario1/archivo.txt usuario2@dominio2.com:/home/usuario2/  *copiar Archivo de servidor a servidor
+scp -r /home/mario/carpeta usuario@dominio.com:/home/usuario      * Copiar un directorio completo al servidor
+
