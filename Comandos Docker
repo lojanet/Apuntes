@@ -3,9 +3,13 @@ Comandos Principales para Trabajar con docker  y docker-compose :
 https://clouding.io/kb/trabajando-con-imagenes-en-docker/  Documentacion para revisar
 https://www.muylinux.com/2016/04/19/tutorial-docker/
 
-Instalar Docker desde un scrip simplificado.
-
+************Instalar Docker desde un scrip simplificado.**************
 curl -sSL https://get.docker.com/ | sh        *Instalamos el docker el scrip esta en get.docker.com
+sudo usermod -aG docker SU_USUARIO            *Da privilegios SU_USUARIO para ejecutar docker como root (sin anteponer SUDO)
+***********Instalar Docker-compose***************************
+curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+**************************************************************
 **********Si cutiene Cuenta en Docker hub para subir bajar y administrar Imagenes **********
 docker login                                  *Accesa a Cuenta de docker hub nos pide Useuario y contraseña
 docker tag mi_imagen lojanet/mi_imagen         *Se cambia el nombre de la imagen a subir con uns con indicación a nuestro repositorio
@@ -13,8 +17,6 @@ docker rmi mi-imagen                          *Podemos borrar la imagen antigua 
 docker push lojanet/mi_imagen                 *Subimos la imagen a nuestra cuenta de docker hub (lojanet/mi_imagen)
 docker pull lojanet/mi_imagen                 *bajar una imagen a nuestra computador
 *****************
-sudo usermod -aG docker SU_USUARIO            *Da privilegios SU_USUARIO para ejecutar docker como root (sin anteponer SUDO)
-
 docker info                                   *Información de Imagenes, Contenedores y versiones que estan en nuestra maquina
 docker ps -a                                  *para saber que contenedores se estan ejecutando -a se puede ver el estado del contenedor
 docker search UBUNTU                          *Buscar imagenes UBUNTU en repositorio Git Docker
