@@ -82,6 +82,10 @@ docker run -i -t lojanet/postfix /bin/bash     *Ingresamos dentro de la imagen p
 postfix start                *Iniciamos el servicio o verificamos que este corriendo y luego salimos con exit
 docker push lojanet/postfix   *Para grabar y publicar en la cuenta de docker para poder hacer publico y reutilizar la imagen
 *****************************************************************************************************
+*****************Crear Imagen a Partir de una Reseta   Dockerfiile   ************************************
+Dockerfile es un archivo tipo scrip donde se escriben todos los comandos para ejecutarce y crear la Imagen esta debe
+
+docker build -t 'imagen:version' ~/     *el archivo Dockerfile esta en ~/ (ubicacion actual) -t es para nombre y version de la imagen.
 
 
 
