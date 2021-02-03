@@ -62,7 +62,8 @@ sudo apt-get install git-core           Instalar GITUHB Si queremos bajar desde 
         finger usuario 			ver info de usuario
 *************
 ********* ADMINISTRANDO RECURSOS DE UN SERVIDOR *************************
-htop      se monitorea los recursos del servidor en caliente instalar sudo apt install htop
+htop      *se monitorea los recursos del servidor en caliente instalar sudo apt install htop
+speedtest-cli   *Ver velocidad de internet si no esta instalar   -> sudo apt-get install speedtest-cli
 df -h     se ve el espacio del disco usado y libre
 du -sh /home/user/Desktop/: La opción -s nos da el tamaño total de una carpeta especifica (en este caso el tamaño de la carpeta Desktop).
 free -m muestra el uso de la memoria ram
