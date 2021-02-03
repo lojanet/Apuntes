@@ -1,6 +1,7 @@
 Archivo de comandos para Trabajar en linux ubuntu
 ************MAS USADOS******************
 ls -l                * listado de los archivos -l. para ver los permisos 
+ln -s ORIGEN DESTINO   * Crea enlace sibolico para acceso más rapido lo mismo que un acceso directo
 mkdir -p DIRECTORIO     * Crea directorio -p para 
 rm  -r PARA_BORRAR      * Para borrar -r Borra directorios
 cp -r -a /var/www/dir1 /home/asolano     * copiar archivos -r en forma recursiva copia directorios, -a respeta los permisos 
@@ -61,7 +62,7 @@ sudo apt-get install git-core           Instalar GITUHB Si queremos bajar desde 
         finger usuario 			ver info de usuario
 *************
 ********* ADMINISTRANDO RECURSOS DE UN SERVIDOR *************************
-htop      se monitorea los recursos del servidor en caliente
+htop      se monitorea los recursos del servidor en caliente instalar sudo apt install htop
 df -h     se ve el espacio del disco usado y libre
 du -sh /home/user/Desktop/: La opción -s nos da el tamaño total de una carpeta especifica (en este caso el tamaño de la carpeta Desktop).
 free -m muestra el uso de la memoria ram
