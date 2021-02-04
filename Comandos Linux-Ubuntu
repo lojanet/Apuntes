@@ -10,6 +10,16 @@ shutdown now            * apaga la maquina en el momento
 reboot                   * reinicia el computador
 sudo -s                 * cambia el usuario a Root
 
+********Trabajar con Paquetes/programas*************
+dpkg --list                  *lista de programas instalados
+apt-get install [Programa]   *Instalación simple
+apt install --reinstall [Programa]   * reinstalar un programa
+aptitude reinstall [Programa or  '~i'    * Reinstala el Programa y sus dependencias esto '~i' significa todos los paquetes
+apt-get remove --purge [Programa]  *Desistalar un Programa incluso los archivos de configuración (/etc)  igual al comando  apt-get purge  [Programa] ojo no quita archivos de /home
+apt-get remove [Programa]  *Desistalar un Programa pero no quita las configuraciones  (lo que esta en /etc)
+
+
+      
 ********TRABAJANDO CON PUERTOS********************
 netstat -anp --udp --tcp | grep LISTEN  *lista puertos abiertos filtrado por los que estan a la Escucha
 fuser -k 8069/tcp                       *cierra puerto 8069
